@@ -66,7 +66,7 @@ To package with your Qt Android app, cop output folder to you project and in you
 
 ```
 if (ANDROID)
-    set_target_properties(app-GCCLeaderboard PROPERTIES
+    set_target_properties(myAppTarget PROPERTIES
         QT_ANDROID_EXTRA_LIBS "${CMAKE_CURRENT_SOURCE_DIR}/output/libs/arm64-v8a/libpq.so"
         QT_ANDROID_EXTRA_PLUGINS "${CMAKE_CURRENT_SOURCE_DIR}/output/plugins"
     )
@@ -80,7 +80,7 @@ if (ANDROID)
     )
     FetchContent_MakeAvailable(android_openssl)
     include(${android_openssl_SOURCE_DIR}/android_openssl.cmake)
-    add_android_openssl_libraries(app-GCCLeaderboard)
+    add_android_openssl_libraries(myAppTarget)
 endif()
 ```
 
