@@ -55,6 +55,7 @@ cd ..
 ### ==============================
 ### Build Qt PostgreSQL driver plugin
 ### ==============================
+rm -rf ./build
 mkdir -p build && cd build
 
 cmake \
@@ -72,4 +73,12 @@ cmake \
     ..
 
 cmake --build . --parallel
+
+cd ..
+
+rm -rf ./output
+mkdir -p output/libs/arm64-v8a
+mkdir -p output/plugins
+mv build/plugins/sqldrivers/libplugins__qsqlpsql_arm64-v8a.so output/plugins/libplugins_sqldrivers_qsqlpsql_arm64-v8a.so
+mv postgresql-17.6/src/interfaces/libpq/libpq.so output/libs/arm64-v8a/libpq.so
 
