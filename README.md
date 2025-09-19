@@ -1,6 +1,6 @@
 # Qt-SQLDriver-PQSQL-android
 
-This repository provides a ready-to-use build setup for compiling the **Qt PostgreSQL SQL driver (`qsqlpsql`)** plugin for **Android (arm64-v8a)**.  
+This repository provides a ready-to-use build setup for compiling the **Qt PostgreSQL SQL driver (`qsqlpsql`)** plugin for **Android**.  
 It uses **Qt 6.8.3** and links against **libpq.so (PostgreSQL 17.6)**.
 
 ---
@@ -24,7 +24,7 @@ Qt-SQLDriver-PQSQL-android/
 ├── postgresql-17.7/
 ```
 
-2. **Adjust paths** in `build.sh` to match your system:
+2. **Adjust paths** in `build-<arch>.sh` to match your system:
 - `NDK_ROOT` → Android NDK path  
 - `ANDROID_SDK_ROOT` → Android SDK path  
 - `QT_ROOT` → Qt installation root  
@@ -33,24 +33,24 @@ Qt-SQLDriver-PQSQL-android/
 3. **Run the build script**:
 ```bash
 chmod +x build.sh
-./build.sh
+./build-<arch>.sh
 ```
 
 4. **The script will:**
 
-- Cross-compile libpq.so for arm64-v8a
+- Cross-compile libpq.so for the configured architecture
 - Build the qsqlpsql plugin for Qt Android
 
 5. Bundle with your Qt Android app:
 
-- Copy libplugins_sqldrivers_qsqlpsql_arm64-v8a.so into your Qt project under libs/arm64-v8a/
+- Copy libplugins_sqldrivers_qsqlpsql_<arch>.so into your Qt project under libs/<arch>/
 - Copy libpq.so into the same folder
 
 ## 🔄 Other Platforms
 
-This setup only compiles for Android arm64-v8a.
+This setup only compiles for Android arm64-v8a and armeabi-v7a.
 
-- To build for other platforms (e.g., x86, armv7), the script must be adapted.
+- To build for other platforms (e.g., x86), the script must be adapted.
 - You can use ChatGPT or another AI to generate platform-specific instructions.
 
 ## 📦 Output
@@ -87,4 +87,4 @@ endif()
 ## 📌 Notes
 
 - OpenSSL support can be disabled by adding `--with-openssl=no`. OpenSSL needs to be cross-compiled for Android.
-- Tested only with Qt 6.8.3 + Android arm64-v8a.
+- Tested only with Qt 6.8.3 + Android arm64-v8a and armeabi-v7a.
