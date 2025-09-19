@@ -15,13 +15,13 @@ It uses **Qt 6.8.3** and links against **libpq.so (PostgreSQL 17.6)**.
 
 ## 📖 Instructions
 
-1. **Clone this repository** and place the PostgreSQL source (version 17.7) in the same directory.  
+1. **Clone this repository** and place the PostgreSQL source (version 17.6) in the same directory.  
    Example structure:
 
 ```
 Qt-SQLDriver-PQSQL-android/
 ├── build.sh
-├── postgresql-17.7/
+├── postgresql-17.6/
 ```
 
 2. **Adjust paths** in `build-<arch>.sh` to match your system:
