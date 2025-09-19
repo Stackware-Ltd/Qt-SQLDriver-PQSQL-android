@@ -9,7 +9,7 @@ It uses **Qt 6.8.3** and links against **libpq.so (PostgreSQL 17.6)**.
 - Qt 6.8.3 installed (with both Android and host kits)
 - Android NDK (tested with r26.1)
 - CMake ≥ 3.20
-- PostgreSQL 17.6 source code (Provided in repo)
+- PostgreSQL 17.6 source code (Provided in repo but better to download a fresh copy)
 
 ---
 
